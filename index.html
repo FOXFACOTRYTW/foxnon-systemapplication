@@ -10,32 +10,25 @@
   :root{--orange:#E87722;--orange-light:#FFF3E8;--orange-mid:#F5A95A;--gray-100:#F7F7F7;--gray-200:#EBEBEB;--gray-300:#D4D4D4;--gray-400:#ABABAB;--gray-600:#6B6B6B;--gray-800:#2E2E2E;--white:#FFFFFF;--section-radius:12px;--input-radius:7px;--shadow-card:0 4px 24px rgba(0,0,0,0.07);}
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,#FFF8F2 0%,#FEF4EA 50%,#FDFBF8 100%);min-height:100vh;color:var(--gray-800);}
-
   .header{background:var(--white);border-bottom:2px solid var(--orange-light);padding:14px 32px;display:flex;align-items:center;gap:16px;box-shadow:0 2px 12px rgba(232,119,34,0.07);position:sticky;top:0;z-index:100;}
   .header-logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:var(--orange);letter-spacing:3px;padding:3px 12px;border:2.5px solid var(--orange);border-radius:6px;}
   .header-title{font-size:12px;font-weight:500;color:var(--gray-600);letter-spacing:2px;text-transform:uppercase;}
   .header-actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;}
-
   #form-page{display:block;}#preview-page{display:none;}
   .container{max-width:900px;margin:0 auto;padding:28px 20px 60px;}
-
   .section-card{background:var(--white);border-radius:var(--section-radius);box-shadow:var(--shadow-card);margin-bottom:20px;overflow:hidden;border:1px solid #F0E8DE;}
   .section-header{background:linear-gradient(90deg,var(--orange) 0%,var(--orange-mid) 100%);padding:10px 20px;display:flex;align-items:center;gap:10px;}
   .section-header h2{color:var(--white);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;}
   .section-icon{width:20px;height:20px;background:rgba(255,255,255,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:white;}
   .section-body{padding:18px 20px 14px;}
-
   .form-row{display:grid;grid-template-columns:28px 155px 1fr;align-items:center;gap:7px 10px;margin-bottom:9px;}
   .row-num{font-size:10px;color:var(--orange);font-weight:600;width:20px;height:20px;background:var(--orange-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .row-label{font-size:12px;font-weight:500;color:var(--gray-600);white-space:nowrap;}
-
   input[type="text"],input[type="email"],input[type="datetime-local"],select,textarea{width:100%;border:1.5px solid var(--gray-200);border-radius:var(--input-radius);padding:8px 11px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--gray-800);background:var(--gray-100);transition:border-color .2s,background .2s,box-shadow .2s;outline:none;}
   input:focus,select:focus,textarea:focus{border-color:var(--orange-mid);background:var(--white);box-shadow:0 0 0 3px rgba(232,119,34,0.10);}
   input::placeholder,textarea::placeholder{color:var(--gray-300);font-size:12px;}
   select{appearance:none;cursor:pointer;}
-
   .form-divider{height:1px;background:var(--gray-200);margin:13px 0;}
-
   .item-card{background:var(--white);border:1.5px solid #F0E8DE;border-radius:10px;margin-bottom:14px;overflow:hidden;}
   .item-card-header{background:var(--orange-light);padding:8px 14px;display:flex;align-items:center;justify-content:space-between;}
   .item-card-title{font-size:13px;font-weight:600;color:var(--orange);}
@@ -49,7 +42,6 @@
   .field-label{font-size:11.5px;font-weight:500;color:var(--gray-600);margin-bottom:4px;display:block;}
   .field-hint{font-size:10px;color:var(--orange-mid);margin-top:3px;}
   .item-divider{height:1px;background:var(--gray-200);margin:12px 0;}
-
   .add-item-btn{display:flex;align-items:center;gap:8px;background:none;border:2px dashed var(--orange-mid);border-radius:8px;padding:9px 16px;cursor:pointer;color:var(--orange);font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;width:100%;margin-top:6px;transition:background .2s;}
   .add-item-btn:hover{background:var(--orange-light);}
   .plus-icon{width:22px;height:22px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;line-height:1;flex-shrink:0;}
@@ -57,12 +49,6 @@
   .remove-item-btn:hover{color:#E85858;}
   .copy-item-btn{background:none;border:1px solid var(--orange-mid);color:var(--orange);font-size:12px;cursor:pointer;padding:3px 10px;border-radius:4px;transition:background .2s;font-family:'DM Sans',sans-serif;font-weight:500;}
   .copy-item-btn:hover{background:var(--orange-light);}
-
-  /* validation error */
-  .field-error input,.field-error select{border-color:#E85858!important;background:#FFF5F5!important;}
-  .error-msg{font-size:10.5px;color:#E85858;font-weight:600;margin-top:3px;display:none;}
-  .field-error .error-msg{display:block;}
-
   /* validation toast */
   #val-toast{position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#fff;border:2px solid #E85858;border-radius:12px;padding:16px 22px;box-shadow:0 8px 32px rgba(0,0,0,0.18);z-index:9999;min-width:320px;max-width:520px;display:none;}
   #val-toast.show{display:block;animation:slideIn .25s ease;}
@@ -70,27 +56,24 @@
   #val-toast h3{font-size:13px;font-weight:700;color:#E85858;margin-bottom:8px;}
   #val-toast ul{font-size:12px;color:var(--gray-800);padding-left:18px;line-height:1.8;}
   #val-toast-close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:18px;cursor:pointer;color:var(--gray-400);}
-
-  /* GL-code pulsing highlight */
+  /* GL-code highlight */
   .glcode-highlight{animation:glPulse 1s ease 3;}
   @keyframes glPulse{0%,100%{border-color:var(--gray-200);box-shadow:none}50%{border-color:var(--orange);box-shadow:0 0 0 4px rgba(232,119,34,0.22);background:#FFF3E0;}}
-
-  /* locked dim field (same CTN) */
-  input.locked-dim{background:#F0F0F0!important;color:var(--gray-400)!important;cursor:not-allowed!important;border-color:var(--gray-200)!important;}
-
+  /* locked dim */
+  input.locked-dim{background:#F0F0F0!important;color:var(--gray-600)!important;cursor:not-allowed!important;border-color:var(--gray-200)!important;}
+  /* dim missing warning */
+  .dim-missing-warn{display:none;font-size:11px;color:#E85858;font-weight:600;margin-top:5px;padding:6px 10px;background:#FFF0F0;border-left:3px solid #E85858;border-radius:0 5px 5px 0;}
+  .dim-missing-warn.show{display:block;}
   .checkbox-group{display:flex;gap:20px;flex-wrap:wrap;padding:12px 20px 14px;background:#FFF8F2;border-top:1px solid #F0E8DE;}
   .checkbox-item{display:flex;align-items:center;gap:8px;cursor:pointer;}
   .checkbox-item input[type="checkbox"]{width:16px;height:16px;accent-color:var(--orange);cursor:pointer;}
   .checkbox-item span{font-size:13px;color:var(--gray-600);font-weight:500;}
-
   .btn-primary{background:linear-gradient(135deg,var(--orange) 0%,#D4621A 100%);color:white;border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;box-shadow:0 4px 16px rgba(232,119,34,0.3);transition:opacity .2s,transform .1s;}
   .btn-primary:hover{opacity:.92;transform:translateY(-1px);}
   .btn-outline{background:white;color:var(--orange);border:2px solid var(--orange);border-radius:8px;padding:8px 16px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background .2s;}
   .btn-outline:hover{background:var(--orange-light);}
   .btn-green{background:linear-gradient(135deg,#27AE60 0%,#1E8449 100%);color:white;border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;box-shadow:0 4px 16px rgba(39,174,96,0.3);}
   .btn-blue{background:linear-gradient(135deg,#2980B9 0%,#1A5276 100%);color:white;border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;box-shadow:0 4px 16px rgba(41,128,185,0.3);}
-
-  /* DRAFT */
   .draft-panel{background:var(--white);border-radius:10px;border:1.5px solid var(--gray-200);padding:14px 18px;margin-bottom:18px;}
   .draft-panel h3{font-size:12px;font-weight:600;color:var(--gray-600);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
   .draft-list{display:flex;flex-direction:column;gap:6px;max-height:200px;overflow-y:auto;}
@@ -101,46 +84,23 @@
   .draft-btn-load{font-size:11px;padding:4px 12px;background:var(--orange-light);color:var(--orange);border:1px solid var(--orange-mid);border-radius:5px;cursor:pointer;font-weight:600;}
   .draft-btn-del{font-size:11px;padding:4px 10px;background:#FFF0F0;color:#C0392B;border:1px solid #E8A8A8;border-radius:5px;cursor:pointer;}
   .draft-empty{font-size:12px;color:var(--gray-400);text-align:center;padding:12px;}
-
-  /* AUDIT MODAL */
   .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:500;align-items:center;justify-content:center;}
   .modal-overlay.active{display:flex;}
   .modal-box{background:white;border-radius:16px;padding:32px 28px;max-width:500px;width:92%;box-shadow:0 20px 60px rgba(0,0,0,0.22);}
   .modal-box h2{font-size:17px;font-weight:700;margin-bottom:10px;color:var(--gray-800);}
   .modal-box p{font-size:13px;color:var(--gray-600);margin-bottom:14px;line-height:1.65;}
-  .modal-path{background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:7px;padding:10px 14px;font-size:11.5px;color:var(--gray-800);font-family:monospace;margin-bottom:18px;word-break:break-all;line-height:1.5;}
   .modal-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;}
-
-  /* PREVIEW */
   .preview-header{background:#111;color:white;padding:14px 32px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:100;}
   .preview-header h2{font-size:14px;font-weight:600;letter-spacing:1px;}
   .preview-actions{margin-left:auto;display:flex;gap:8px;}
-
-  /* ─── PDF DOCUMENT ─── */
-  #pdf-content{
-    background:white;
-    /* A4 landscape usable width at 96dpi: 297mm × 3.7795 = 1122px − 2×15px pad = 1092px */
-    width:1092px; max-width:1092px;
-    margin:28px auto;
-    padding:18px 20px 22px;
-    box-shadow:0 4px 40px rgba(0,0,0,0.14);
-    border-radius:4px;
-    font-family:Arial,Helvetica,sans-serif;
-    font-size:9.5px;
-    line-height:1.35;
-  }
+  #pdf-content{background:white;width:1092px;max-width:1092px;margin:28px auto;padding:18px 20px 22px;box-shadow:0 4px 40px rgba(0,0,0,0.14);border-radius:4px;font-family:Arial,Helvetica,sans-serif;font-size:9.5px;line-height:1.35;}
   .pdf-title-bar{background:#111;color:white;text-align:center;padding:7px;font-size:14px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;}
-  /* Two-column header: left=shipper, right=receiver — both left-aligned */
   .pdf-header-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;margin-bottom:10px;}
   .pdf-col{display:flex;flex-direction:column;gap:0;}
-  /* Shared meta row: label bold, value normal */
   .pdf-mr{display:flex;gap:4px;margin-bottom:2px;font-size:9px;}
   .pdf-ml{font-weight:700;color:#222;white-space:nowrap;min-width:78px;}
   .pdf-mv{color:#222;}
-  /* divider inside right column */
   .pdf-col-divider{height:1px;background:#DDD;margin:5px 0;}
-
-  /* TABLE */
   .pdf-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:8px;table-layout:fixed;}
   .pdf-table th{background:#111;color:white;padding:4px 2px;text-align:center;font-weight:700;font-size:7.5px;border:1px solid #333;white-space:nowrap;}
   .pdf-table td{border:1px solid #CCC;padding:3px 2px;text-align:center;vertical-align:middle;color:#111;word-break:break-word;}
@@ -148,13 +108,10 @@
   .pdf-total-row td{font-weight:900!important;background:#E8E8E8!important;border-top:2.5px solid #555;font-size:8.5px;}
   .pdf-comment{margin-top:8px;padding:5px 8px;background:#FFFCE0;border:1px solid #DDD87A;border-radius:2px;font-size:8.5px;color:#555;}
   .pdf-footer{margin-top:10px;text-align:center;font-size:10px;font-weight:700;color:#222;}
-
   @media print{
-    body{background:white;}
-    .preview-header{display:none;}
+    body{background:white;}.preview-header{display:none;}
     #pdf-content{box-shadow:none;margin:0;border-radius:0;width:100%!important;max-width:100%!important;padding:4mm!important;}
     @page{size:A4 landscape;margin:6mm;}
-    /* Force color printing */
     .pdf-title-bar{background:#111!important;color:white!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
     .pdf-table th{background:#111!important;color:white!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
     .pdf-table tr:nth-child(even) td{background:#F8F8F8!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
@@ -189,7 +146,7 @@
   </div>
 </div>
 
-<!-- ======= FORM PAGE ======= -->
+<!-- FORM PAGE -->
 <div id="form-page">
   <div class="header">
     <div class="header-logo">FOX</div>
@@ -202,8 +159,6 @@
   </div>
 
   <div class="container">
-
-    <!-- DRAFT PANEL -->
     <div class="draft-panel" id="draft-panel" style="display:none;">
       <h3>📂 歷史暫存資料</h3>
       <div class="draft-list" id="draft-list"></div>
@@ -236,7 +191,6 @@
           <input type="text" id="r_destination" placeholder="Country, ex: USA, CA" oninput="autoWhite(this)"></div>
         <div class="form-row"><div class="row-num">8</div><div class="row-label">Postal Code</div>
           <input type="text" id="r_postal" placeholder="e.g. 95054" oninput="autoWhite(this)"></div>
-        <!-- #3: Contact person BEFORE Phone -->
         <div class="form-row"><div class="row-num">9</div><div class="row-label">Contact person</div>
           <input type="text" id="r_contact" placeholder="Receiver name" oninput="autoWhite(this)"></div>
         <div class="form-row"><div class="row-num">10</div><div class="row-label">Phone</div>
@@ -258,7 +212,6 @@
           </select></div>
         <div class="form-row"><div class="row-num">13</div><div class="row-label">GL-Code / Payment</div>
           <input type="text" id="t_glcode" placeholder="Please select Term first" oninput="autoWhite(this)"></div>
-        <!-- GL-code prompt banner — shown BELOW #13 after Term selected -->
         <div id="glcode-prompt" style="display:none;margin:-4px 0 8px 38px;padding:8px 14px;background:linear-gradient(90deg,#FFF3E8,#FEF8F2);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;font-size:12px;color:var(--orange);font-weight:600;">
           ⬆ <span id="glcode-prompt-text"></span>
         </div>
@@ -300,25 +253,21 @@
           <span>💧 是否為防水袋 Waterproof Bag</span>
         </label>
       </div>
-      <!-- Battery warning -->
       <div id="battery-warn" style="display:none;margin:0 20px 12px;padding:10px 14px;background:#FFF0F0;border-left:4px solid #E85858;border-radius:0 8px 8px 0;font-size:12px;color:#C0392B;font-weight:600;">
         ⚠ 發信時請附上以下兩份文件：<strong>MSDS</strong> &amp; <strong>UN38.3 Test Report</strong>
       </div>
-      <!-- Oil warning -->
       <div id="oil-warn" style="display:none;margin:0 20px 12px;padding:10px 14px;background:#FFF5E0;border-left:4px solid #E87722;border-radius:0 8px 8px 0;font-size:12px;color:#A04000;font-weight:600;">
         ⚠ 發信時請附上：<strong>MSDS</strong>
       </div>
     </div>
 
     <div style="text-align:center;padding-top:6px;">
-      <button class="btn-primary" style="font-size:15px;padding:12px 44px;" onclick="generatePreview()">
-        📄 產出 PDF 預覽
-      </button>
+      <button class="btn-primary" style="font-size:15px;padding:12px 44px;" onclick="generatePreview()">📄 產出 PDF 預覽</button>
     </div>
   </div>
 </div>
 
-<!-- ======= PREVIEW PAGE ======= -->
+<!-- PREVIEW PAGE -->
 <div id="preview-page">
   <div class="preview-header">
     <span style="font-size:18px;">🦊</span>
@@ -334,22 +283,19 @@
 </div>
 
 <script>
-/* ── BASE64 FOX LOGO ── */
 const FOX_LOGO='data:image/png;base64,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';
 
 let itemCount=0;
 
-/* ── INPUT WHITE-FILL & clear validation error ── */
 function autoWhite(el){
   el.style.background=el.value?'#fff':'';
-  if(el.value){ el.style.borderColor=''; el.style.boxShadow=''; }
+  if(el.value){el.style.borderColor='';el.style.boxShadow='';}
 }
 function autoWhiteSelect(el){
   el.style.background=el.value?'#fff':'';
-  if(el.value){ el.style.borderColor=''; el.style.boxShadow=''; }
+  if(el.value){el.style.borderColor='';el.style.boxShadow='';}
 }
 
-/* ── TERM HINTS ── */
 function updateTermHints(){
   const t=document.getElementById('t_term').value;
   const gl=document.getElementById('t_glcode');
@@ -374,10 +320,76 @@ function updateTermHints(){
   }
 }
 
-/* ── ITEMS ── */
-function buildItemCardHTML(n, data){
-  data=data||{};
-  const s=(cls,ph)=>`<input type="text" placeholder="${ph}" class="${cls}" oninput="autoWhite(this)" style="${data[cls]?'background:#fff':''}">`;
+/* ── CTN LOCK: same CTN → auto-fill & lock G.W. + dims from first occurrence ── */
+function syncCtnLock(){
+  const cards=Array.from(document.querySelectorAll('.item-card'));
+  const firstCtn={};
+
+  // Pass 1: record first card per CTN (only if that card is NOT locked itself)
+  cards.forEach(card=>{
+    const ctn=(card.querySelector('.ctn_no').value||'').trim();
+    if(!ctn) return;
+    if(!firstCtn[ctn]) firstCtn[ctn]=card;
+  });
+
+  // Pass 2: apply lock / unlock
+  cards.forEach(card=>{
+    const ctn=(card.querySelector('.ctn_no').value||'').trim();
+    const gwEl=card.querySelector('.gw');
+    const dlEl=card.querySelector('.dim_l');
+    const dwEl=card.querySelector('.dim_w');
+    const dhEl=card.querySelector('.dim_h');
+    const warnEl=card.querySelector('.dim-missing-warn');
+    const dimFields=[gwEl,dlEl,dwEl,dhEl];
+
+    const isFirst=!ctn || firstCtn[ctn]===card;
+
+    if(!isFirst){
+      // duplicate CTN → auto-fill from first and lock
+      const src=firstCtn[ctn];
+      gwEl.value=src.querySelector('.gw').value;
+      dlEl.value=src.querySelector('.dim_l').value;
+      dwEl.value=src.querySelector('.dim_w').value;
+      dhEl.value=src.querySelector('.dim_h').value;
+      dimFields.forEach(el=>{
+        el.readOnly=true;
+        el.classList.add('locked-dim');
+      });
+      if(warnEl) warnEl.classList.remove('show');
+    } else {
+      // first occurrence → unlock
+      dimFields.forEach(el=>{
+        el.readOnly=false;
+        el.classList.remove('locked-dim');
+      });
+    }
+  });
+}
+
+/* ── CHECK dims for a card (called on gw/dim change) ── */
+function checkDimWarn(el){
+  autoWhite(el);
+  const card=el.closest('.item-card');
+  updateDimWarn(card);
+}
+
+function updateDimWarn(card){
+  const partNo=(card.querySelector('.part_no').value||'').trim();
+  const gw=(card.querySelector('.gw').value||'').trim();
+  const dl=(card.querySelector('.dim_l').value||'').trim();
+  const dw=(card.querySelector('.dim_w').value||'').trim();
+  const dh=(card.querySelector('.dim_h').value||'').trim();
+  const warnEl=card.querySelector('.dim-missing-warn');
+  // Only show warning if NOT locked (i.e. first CTN occurrence)
+  const isLocked=card.querySelector('.gw').classList.contains('locked-dim');
+  if(!isLocked && partNo && (!gw||!dl||!dw||!dh)){
+    warnEl.classList.add('show');
+  } else {
+    warnEl.classList.remove('show');
+  }
+}
+
+function buildItemCardHTML(n){
   return `
     <div class="item-card-header">
       <span class="item-card-title">Item No. ${n}</span>
@@ -389,9 +401,11 @@ function buildItemCardHTML(n, data){
     <div class="item-card-body">
       <div class="item-field-group">
         <div class="item-grid-4">
-          <div><label class="field-label">箱號 (CTN)</label><input type="text" placeholder="1" class="ctn_no" oninput="autoWhite(this);syncCtnLock()"></div>
+          <div><label class="field-label">箱號 (CTN)</label>
+            <input type="text" placeholder="1" class="ctn_no" oninput="autoWhite(this);syncCtnLock()"></div>
           <input type="hidden" class="item_no" value="${n}">
-          <div><label class="field-label">Part #</label><input type="text" placeholder="803-01-487" class="part_no" oninput="autoWhite(this)"></div>
+          <div><label class="field-label">Part #</label>
+            <input type="text" placeholder="803-01-487" class="part_no" oninput="autoWhite(this);updateDimWarn(this.closest('.item-card'))"></div>
           <div><label class="field-label">Category</label>
             <select class="description" onchange="autoFillHTS(this)">
               <option value="">— Select —</option>
@@ -407,8 +421,10 @@ function buildItemCardHTML(n, data){
       </div>
       <div class="item-field-group">
         <div class="item-grid-3">
-          <div><label class="field-label">產地 (COO)</label><input type="text" placeholder="TW" class="coo_material" oninput="autoWhite(this)"></div>
-          <div><label class="field-label">材質 (Material)</label><input type="text" placeholder="Steel / Aluminum" class="material" oninput="autoWhite(this)"></div>
+          <div><label class="field-label">產地 (COO)</label>
+            <input type="text" placeholder="TW" class="coo_material" oninput="autoWhite(this)"></div>
+          <div><label class="field-label">材質 (Material)</label>
+            <input type="text" placeholder="Steel / Aluminum" class="material" oninput="autoWhite(this)"></div>
           <div><label class="field-label">HTS CODE <span style="color:var(--orange-mid);font-size:10px;">— 自動帶入</span></label>
             <input type="text" placeholder="依 Category 帶入" class="hts_code" readonly style="background:#FFF8F2;color:var(--orange);font-weight:600;cursor:default;"></div>
         </div>
@@ -420,11 +436,13 @@ function buildItemCardHTML(n, data){
       <div class="item-divider"></div>
       <div class="item-field-group">
         <div class="item-grid-4">
-          <div><label class="field-label">數量 (QTY)</label><input type="text" placeholder="1" class="qty" oninput="autoWhite(this);calcTotal(this.closest('.item-card'))"></div>
-          <div><label class="field-label">單價 (USD)</label><input type="text" placeholder="3.00" class="unit_price" oninput="autoWhite(this);calcTotal(this.closest('.item-card'))"></div>
+          <div><label class="field-label">數量 (QTY)</label>
+            <input type="text" placeholder="1" class="qty" oninput="autoWhite(this);calcTotal(this.closest('.item-card'))"></div>
+          <div><label class="field-label">單價 (USD)</label>
+            <input type="text" placeholder="3.00" class="unit_price" oninput="autoWhite(this);calcTotal(this.closest('.item-card'))"></div>
           <div><label class="field-label">毛重 (G.W. kg)</label>
-            <input type="text" placeholder="2.48" class="gw" oninput="autoWhite(this)">
-            <span class="field-hint dim-hint">* 箱號相同自動帶入第一箱</span>
+            <input type="text" placeholder="2.48" class="gw" oninput="checkDimWarn(this)">
+            <span class="field-hint">* 箱號相同自動帶入第一箱</span>
           </div>
           <div><label class="field-label">Total Value <span style="color:var(--orange-mid);font-size:10px;">— 自動計算</span></label>
             <input type="text" placeholder="US$ 0.00" class="total_value" readonly style="background:#FFF8F2;color:var(--orange);font-weight:600;"></div>
@@ -432,10 +450,20 @@ function buildItemCardHTML(n, data){
       </div>
       <div class="item-field-group">
         <div class="item-grid-3">
-          <div><label class="field-label">長 (L cm)</label><input type="text" placeholder="23" class="dim_l" oninput="autoWhite(this)"><span class="field-hint dim-hint">* 箱號相同自動帶入第一箱</span></div>
-          <div><label class="field-label">寬 (W cm)</label><input type="text" placeholder="14.5" class="dim_w" oninput="autoWhite(this)"><span class="field-hint dim-hint">* 箱號相同自動帶入第一箱</span></div>
-          <div><label class="field-label">高 (H cm)</label><input type="text" placeholder="18" class="dim_h" oninput="autoWhite(this)"><span class="field-hint dim-hint">* 箱號相同自動帶入第一箱</span></div>
+          <div><label class="field-label">長 (L cm)</label>
+            <input type="text" placeholder="23" class="dim_l" oninput="checkDimWarn(this)">
+            <span class="field-hint">* 箱號相同自動帶入第一箱</span></div>
+          <div><label class="field-label">寬 (W cm)</label>
+            <input type="text" placeholder="14.5" class="dim_w" oninput="checkDimWarn(this)">
+            <span class="field-hint">* 箱號相同自動帶入第一箱</span></div>
+          <div><label class="field-label">高 (H cm)</label>
+            <input type="text" placeholder="18" class="dim_h" oninput="checkDimWarn(this)">
+            <span class="field-hint">* 箱號相同自動帶入第一箱</span></div>
         </div>
+      </div>
+      <!-- dim missing warning — only shows on first CTN occurrence when Part# filled but dims empty -->
+      <div class="dim-missing-warn">
+        ⚠ 已填寫 Part#，請填寫毛重 (G.W.) 及長寬高，否則無法產出 PDF 預覽。
       </div>
     </div>`;
 }
@@ -446,25 +474,27 @@ function addItemRow(copyData){
   const card=document.createElement('div');
   card.className='item-card';
   card.id='item-card-'+itemCount;
-  card.innerHTML=buildItemCardHTML(itemCount, copyData||{});
+  card.innerHTML=buildItemCardHTML(itemCount);
   container.appendChild(card);
-  syncCtnLock();
   if(copyData){
     const fields=['ctn_no','part_no','description','coo_material','material','hts_code','item_desc','qty','unit_price','gw','dim_l','dim_w','dim_h'];
     fields.forEach(f=>{
       const el=card.querySelector('.'+f);
-      if(el&&copyData[f]){el.value=copyData[f];el.style.background=el.readOnly?'':'#fff';}
+      if(el&&copyData[f]){
+        el.value=copyData[f];
+        if(!el.readOnly) el.style.background='#fff';
+        if(el.tagName==='SELECT') autoWhiteSelect(el);
+      }
     });
     calcTotal(card);
   }
+  syncCtnLock();
 }
 
-/* #2: copy item row */
 function copyItemRow(btn){
   const card=btn.closest('.item-card');
   const data=extractCard(card);
   addItemRow(data);
-  // scroll to new card
   document.getElementById('item-card-'+itemCount).scrollIntoView({behavior:'smooth',block:'center'});
 }
 
@@ -489,8 +519,7 @@ function autoFillHTS(sel){
 }
 
 function extractCard(card){
-  const f=(cls)=>{ const el=card.querySelector('.'+cls); return el?el.value:''; };
-  // item_no from hidden input
+  const f=(cls)=>{const el=card.querySelector('.'+cls);return el?el.value:'';};
   const itemNoEl=card.querySelector('.item_no');
   const itemNo=itemNoEl?itemNoEl.value:(card.id||'').replace('item-card-','');
   return {ctn_no:f('ctn_no'),item_no:itemNo,part_no:f('part_no'),
@@ -503,8 +532,81 @@ function getItemRows(){
   return Array.from(document.querySelectorAll('.item-card')).map(c=>extractCard(c));
 }
 
-/* ── HELPERS ── */
 function v(id){return(document.getElementById(id)||{value:''}).value||'';}
+
+function checkBatteryOil(){
+  document.getElementById('battery-warn').style.display=document.getElementById('has_battery').checked?'block':'none';
+  document.getElementById('oil-warn').style.display=document.getElementById('has_oil').checked?'block':'none';
+}
+
+/* ── FORM VALIDATION ── */
+const REQUIRED_FIELDS=[
+  {id:'s_package_ready',label:'Package ready (Sender #1)'},
+  {id:'s_requester',label:'Requester (Sender #2)'},
+  {id:'s_phone',label:'Phone (Sender #3)'},
+  {id:'s_email',label:'Email (Sender #4)'},
+  {id:'r_ship_to',label:'Ship to (Receiver #5)'},
+  {id:'r_address',label:'Address (Receiver #6)'},
+  {id:'r_destination',label:'Destination (Receiver #7)'},
+  {id:'r_postal',label:'Postal Code (Receiver #8)'},
+  {id:'r_contact',label:'Contact person (Receiver #9)'},
+  {id:'r_phone',label:'Phone (Receiver #10)'},
+  {id:'r_email',label:'Email (Receiver #11)'},
+  {id:'t_term',label:'Term (Trade Term #12)'},
+  {id:'t_glcode',label:'GL-Code / Payment (Trade Term #13)'},
+  {id:'t_shipping',label:'Shipping via (Trade Term #14)'},
+];
+
+function validateForm(){
+  const missing=[];
+  REQUIRED_FIELDS.forEach(f=>{
+    const el=document.getElementById(f.id);
+    if(el) el.style.borderColor='';
+  });
+  REQUIRED_FIELDS.forEach(f=>{
+    const el=document.getElementById(f.id);
+    if(!el) return;
+    if(!el.value.trim()){
+      missing.push(f.label);
+      el.style.borderColor='#E85858';
+      el.style.boxShadow='0 0 0 3px rgba(232,88,88,0.15)';
+    }
+  });
+
+  // Check: if Part# filled but dims/gw empty (on non-locked cards)
+  const cards=Array.from(document.querySelectorAll('.item-card'));
+  cards.forEach((card,idx)=>{
+    const isLocked=card.querySelector('.gw').classList.contains('locked-dim');
+    if(isLocked) return; // skip locked cards — they inherit from first
+    const partNo=(card.querySelector('.part_no').value||'').trim();
+    if(!partNo) return; // no part# → skip
+    const gw=(card.querySelector('.gw').value||'').trim();
+    const dl=(card.querySelector('.dim_l').value||'').trim();
+    const dw=(card.querySelector('.dim_w').value||'').trim();
+    const dh=(card.querySelector('.dim_h').value||'').trim();
+    if(!gw||!dl||!dw||!dh){
+      missing.push(`Item No.${idx+1} — 有 Part# 但毛重/長寬高未完整填寫`);
+      // highlight missing dim fields
+      [['gw',gw],['dim_l',dl],['dim_w',dw],['dim_h',dh]].forEach(([cls,val])=>{
+        if(!val){
+          const el=card.querySelector('.'+cls);
+          el.style.borderColor='#E85858';
+          el.style.boxShadow='0 0 0 3px rgba(232,88,88,0.15)';
+        }
+      });
+    }
+  });
+
+  if(missing.length){
+    document.getElementById('val-list').innerHTML=missing.map(m=>`<li>${m}</li>`).join('');
+    document.getElementById('val-toast').classList.add('show');
+    const firstErr=document.querySelector('input[style*="E85858"],select[style*="E85858"]');
+    if(firstErr) firstErr.scrollIntoView({behavior:'smooth',block:'center'});
+    return false;
+  }
+  document.getElementById('val-toast').classList.remove('show');
+  return true;
+}
 
 /* ── DRAFT ── */
 function getFormData(){
@@ -525,9 +627,9 @@ function setFormData(d){
   document.getElementById('has_battery').checked=d.has_battery||false;
   document.getElementById('has_oil').checked=d.has_oil||false;
   document.getElementById('has_waterproof').checked=d.has_waterproof||false;
-  updateTermHints();
+  checkBatteryOil();updateTermHints();
   document.getElementById('items-container').innerHTML='';itemCount=0;
-  (d.items||[]).forEach(it=>{addItemRow(it);});
+  (d.items||[]).forEach(it=>addItemRow(it));
 }
 
 function saveDraft(){
@@ -572,118 +674,9 @@ function deleteDraft(id){
   drafts=drafts.filter(x=>x.id!==id);localStorage.setItem('fox_drafts',JSON.stringify(drafts));renderDraftList();
 }
 
-/* ── #9 #10: Battery / Oil warnings ── */
-function checkBatteryOil(){
-  document.getElementById('battery-warn').style.display=document.getElementById('has_battery').checked?'block':'none';
-  document.getElementById('oil-warn').style.display=document.getElementById('has_oil').checked?'block':'none';
-}
-
-/* ── #1: FORM VALIDATION ── */
-const REQUIRED_FIELDS=[
-  {id:'s_package_ready', label:'Package ready (Sender #1)'},
-  {id:'s_requester',     label:'Requester (Sender #2)'},
-  {id:'s_phone',         label:'Phone (Sender #3)'},
-  {id:'s_email',         label:'Email (Sender #4)'},
-  {id:'r_ship_to',       label:'Ship to (Receiver #5)'},
-  {id:'r_address',       label:'Address (Receiver #6)'},
-  {id:'r_destination',   label:'Destination (Receiver #7)'},
-  {id:'r_postal',        label:'Postal Code (Receiver #8)'},
-  {id:'r_contact',       label:'Contact person (Receiver #9)'},
-  {id:'r_phone',         label:'Phone (Receiver #10)'},
-  {id:'r_email',         label:'Email (Receiver #11)'},
-  {id:'t_term',          label:'Term (Trade Term #12)'},
-  {id:'t_glcode',        label:'GL-Code / Payment (Trade Term #13)'},
-  {id:'t_shipping',      label:'Shipping via (Trade Term #14)'},
-];
-
-function validateForm(){
-  const missing=[];
-  // Clear previous errors
-  REQUIRED_FIELDS.forEach(f=>{
-    const el=document.getElementById(f.id);
-    if(el) el.style.borderColor='';
-  });
-
-  REQUIRED_FIELDS.forEach(f=>{
-    const el=document.getElementById(f.id);
-    if(!el) return;
-    const val=el.value.trim();
-    if(!val){
-      missing.push(f.label);
-      el.style.borderColor='#E85858';
-      el.style.boxShadow='0 0 0 3px rgba(232,88,88,0.15)';
-    }
-  });
-
-  if(missing.length){
-    const list=document.getElementById('val-list');
-    list.innerHTML=missing.map(m=>`<li>${m}</li>`).join('');
-    const toast=document.getElementById('val-toast');
-    toast.classList.add('show');
-    // Auto-scroll to first error
-    const firstErr=document.querySelector('[style*="E85858"]');
-    if(firstErr) firstErr.scrollIntoView({behavior:'smooth',block:'center'});
-    return false;
-  }
-  document.getElementById('val-toast').classList.remove('show');
-  return true;
-}
-
-/* ── #2: CTN LOCK — same CTN → lock G.W. & dims, auto-fill from first ── */
-function syncCtnLock(){
-  const cards=Array.from(document.querySelectorAll('.item-card'));
-  // Build map: ctn → first card with that ctn that has data
-  const firstCtn={};
-
-  // First pass: collect first occurrence values per CTN
-  cards.forEach(card=>{
-    const ctn=(card.querySelector('.ctn_no').value||'').trim();
-    if(!ctn) return;
-    if(!firstCtn[ctn]){
-      firstCtn[ctn]={
-        gw:  card.querySelector('.gw').value,
-        dim_l: card.querySelector('.dim_l').value,
-        dim_w: card.querySelector('.dim_w').value,
-        dim_h: card.querySelector('.dim_h').value,
-        card: card
-      };
-    }
-  });
-
-  // Second pass: lock/unlock each card's dim fields
-  cards.forEach(card=>{
-    const ctn=(card.querySelector('.ctn_no').value||'').trim();
-    const gwEl=card.querySelector('.gw');
-    const dlEl=card.querySelector('.dim_l');
-    const dwEl=card.querySelector('.dim_w');
-    const dhEl=card.querySelector('.dim_h');
-    const dimFields=[gwEl,dlEl,dwEl,dhEl];
-
-    if(ctn && firstCtn[ctn] && firstCtn[ctn].card !== card){
-      // This is a duplicate CTN — lock and auto-fill
-      const src=firstCtn[ctn];
-      gwEl.value=src.gw;
-      dlEl.value=src.dim_l;
-      dwEl.value=src.dim_w;
-      dhEl.value=src.dim_h;
-      dimFields.forEach(el=>{
-        el.readOnly=true;
-        el.classList.add('locked-dim');
-        el.style.background='';
-      });
-    } else {
-      // First occurrence or no CTN — unlock
-      dimFields.forEach(el=>{
-        el.readOnly=false;
-        el.classList.remove('locked-dim');
-      });
-    }
-  });
-}
-
 /* ── GENERATE PDF ── */
 function generatePreview(){
-  if(!validateForm()) return;   // #1: block if validation fails
+  if(!validateForm()) return;
   const items=getItemRows();
   const hasBattery=document.getElementById('has_battery').checked;
   const hasOil=document.getElementById('has_oil').checked;
@@ -697,7 +690,6 @@ function generatePreview(){
   });
   const seenCtn={};
   let itemRows='';
-  /* #1: COO & Material uppercase; #12: item_no from card title number */
   items.forEach((it,idx)=>{
     const k=it.ctn_no||'__'+(idx+1);
     const show=!seenCtn[k];if(show)seenCtn[k]=true;
@@ -714,21 +706,17 @@ function generatePreview(){
       <td>${it.total_value||''}</td>
     </tr>`;
   });
-
   const specialNotes=[];
   if(hasWaterproof) specialNotes.push('Waterproof Bag: YES');
-
   const totalCtn=[...new Set(items.map(i=>i.ctn_no).filter(Boolean))].length||1;
-  /* #2: Ship Date — date only, strip time */
   const rawDate=v('s_package_ready');
   const dateOnly=rawDate?rawDate.split('T')[0]:'';
 
   document.getElementById('pdf-content').innerHTML=`
     <div class="pdf-title-bar">Invoice / Packing</div>
     <div class="pdf-header-grid">
-      <!-- LEFT: Shipper -->
       <div class="pdf-col">
-        <img src="${FOX_LOGO}" style="width:120px;height:90px;display:block;margin-bottom:7px;">
+        <img src="${FOX_LOGO}" style="width:120px;height:auto;display:block;margin-bottom:7px;">
         <div class="pdf-mr"><span class="pdf-ml">Shipper:</span><span class="pdf-mv">Fox Factory Switzerland GmbH, Taiwan Branch</span></div>
         <div class="pdf-mr"><span class="pdf-ml">Address:</span><span class="pdf-mv">No. 22, Jingke S. Rd., Nantun Dist., Taichung City</span></div>
         <div class="pdf-mr"><span class="pdf-ml">Country:</span><span class="pdf-mv">Taiwan</span></div>
@@ -741,7 +729,6 @@ function generatePreview(){
         <div class="pdf-mr"><span class="pdf-ml">Ship Date:</span><span class="pdf-mv">${dateOnly}</span></div>
         <div class="pdf-mr"><span class="pdf-ml">Ship via:</span><span class="pdf-mv">${v('t_shipping')}</span></div>
       </div>
-      <!-- RIGHT: Receiver — no border (#2 fix) -->
       <div class="pdf-col" style="padding:4px 8px;">
         <div class="pdf-mr"><span class="pdf-ml">Ship To:</span><span class="pdf-mv">${v('r_ship_to')}</span></div>
         <div class="pdf-mr"><span class="pdf-ml">Address:</span><span class="pdf-mv">${v('r_address')}</span></div>
@@ -758,7 +745,6 @@ function generatePreview(){
         ${specialNotes.length?`<div style="height:4px"></div><div class="pdf-mr"><span class="pdf-ml">Note:</span><span class="pdf-mv">${specialNotes.join(', ')}</span></div>`:''}
       </div>
     </div>
-
     <table class="pdf-table">
       <colgroup>
         <col style="width:4%"><col style="width:4%"><col style="width:7%">
@@ -802,22 +788,17 @@ function backToForm(){
   window.scrollTo(0,0);
 }
 
-/* ── AUDIT + EMAIL FLOW ── */
 function startEmailFlow(){document.getElementById('audit-modal').classList.add('active');}
 function closeAuditModal(){document.getElementById('audit-modal').classList.remove('active');}
 
-/* #3: Restore clipboard copy + file:// attempt */
 function openAuditFile(){
   const folderPath='T:\\TW_Public\\Logistic- Non-system tracking list';
-  const filePath='T:\\TW_Public\\Logistic- Non-system tracking list\\非經Tracking表2026.xlsx';
-  // Show green status
   const statusEl=document.getElementById('audit-copy-status');
   navigator.clipboard.writeText(folderPath).then(()=>{
     if(statusEl) statusEl.style.display='block';
   }).catch(()=>{
     prompt('請複製以下路徑，貼到檔案總管網址列：',folderPath);
   });
-  // Try file:// open
   try{
     const a=document.createElement('a');
     a.href='file:///'+folderPath.replace(/\\/g,'/');
@@ -827,9 +808,7 @@ function openAuditFile(){
 
 function auditDone(){closeAuditModal();downloadPDFAndEmail();}
 
-/* #3: Use browser print engine for accurate PDF — matches preview exactly */
 function downloadPDFAndEmail(){
-  // Open a new window with just the PDF content and trigger print dialog
   const pdfHTML=document.getElementById('pdf-content').outerHTML;
   const printWin=window.open('','_blank','width=1200,height=800');
   printWin.document.write(`<!DOCTYPE html>
@@ -845,7 +824,6 @@ function downloadPDFAndEmail(){
   .pdf-mr{display:flex;gap:4px;margin-bottom:2px;font-size:9px;}
   .pdf-ml{font-weight:700;color:#222;white-space:nowrap;min-width:78px;}
   .pdf-mv{color:#222;}
-  .pdf-col-divider{height:1px;background:#DDD;margin:5px 0;}
   .pdf-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:8px;table-layout:fixed;}
   .pdf-table th{background:#111!important;color:white!important;padding:4px 2px;text-align:center;font-weight:700;font-size:7.5px;border:1px solid #333;white-space:nowrap;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   .pdf-table td{border:1px solid #CCC;padding:3px 2px;text-align:center;vertical-align:middle;color:#111;word-break:break-word;}
@@ -857,14 +835,9 @@ function downloadPDFAndEmail(){
 </head><body>${pdfHTML}</body></html>`);
   printWin.document.close();
   printWin.focus();
-  setTimeout(()=>{
-    printWin.print();
-    // After print dialog, show confirm to open email
-    setTimeout(()=>showPDFConfirm(),1000);
-  },600);
+  setTimeout(()=>{printWin.print();setTimeout(()=>showPDFConfirm(),1000);},600);
 }
 
-/* #7: Custom confirm dialog with OK + Cancel */
 function showPDFConfirm(){
   const existing=document.getElementById('pdf-confirm-modal');
   if(existing) existing.remove();
@@ -887,19 +860,15 @@ function showPDFConfirm(){
   document.body.appendChild(modal);
 }
 
-/* #6 #8: Email body — 1.5 line spacing, DDP triggers GL-Code label */
 function buildAndOpenEmail(){
   const hasBattery=document.getElementById('has_battery').checked;
   const hasOil=document.getElementById('has_oil').checked;
   const hasWaterproof=document.getElementById('has_waterproof').checked;
   const term=v('t_term');
   const glRaw=v('t_glcode');
-  /* DDP → GL-Code prefix; EXW → no prefix */
   const glLabel=term==='DDP'?'GL-Code: '+glRaw:glRaw;
-  /* #5: include full datetime (date + time) */
   const rawDate=v('s_package_ready');
   const dateVal=rawDate?rawDate.replace('T',' '):'';
-
   let batteryOilLine='NO';
   if(hasBattery||hasOil){
     const parts=[];
@@ -908,7 +877,6 @@ function buildAndOpenEmail(){
     batteryOilLine=parts.join(' | ');
   }
   const wpLine=hasWaterproof?'Waterproof Bag: YES':'Waterproof Bag: NO';
-
   const body=[
     'Hi Logistic team,',
     '',
@@ -927,12 +895,10 @@ function buildAndOpenEmail(){
     '---',
     'Sent via FOX Non-System Application',
   ].join('\r\n');
-
   const subject=encodeURIComponent('【非經系統】Ship to: '+v('r_ship_to'));
   window.location.href=`mailto:ftwlogistics@ridefox.com?subject=${subject}&body=${encodeURIComponent(body)}`;
 }
 
-/* ── INIT ── */
 addItemRow();
 </script>
 </body>
