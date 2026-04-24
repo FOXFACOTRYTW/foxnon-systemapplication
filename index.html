@@ -302,11 +302,11 @@
       </div>
       <!-- Battery warning -->
       <div id="battery-warn" style="display:none;margin:0 20px 12px;padding:10px 14px;background:#FFF0F0;border-left:4px solid #E85858;border-radius:0 8px 8px 0;font-size:12px;color:#C0392B;font-weight:600;">
-        ⚠ E-mail 請附上兩份文件：<strong>MSDS</strong> &amp; <strong>UN38.3 Test Report</strong>
+        ⚠ 發信時請附上以下兩份文件：<strong>MSDS</strong> &amp; <strong>UN38.3 Test Report</strong>
       </div>
       <!-- Oil warning -->
       <div id="oil-warn" style="display:none;margin:0 20px 12px;padding:10px 14px;background:#FFF5E0;border-left:4px solid #E87722;border-radius:0 8px 8px 0;font-size:12px;color:#A04000;font-weight:600;">
-        ⚠ E-mail 請附上：<strong>MSDS</strong>
+        ⚠ 發信時請附上：<strong>MSDS</strong>
       </div>
     </div>
 
@@ -339,9 +339,15 @@ const FOX_LOGO='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABQCAAAAAC7Ni
 
 let itemCount=0;
 
-/* ── INPUT WHITE-FILL ── */
-function autoWhite(el){el.style.background=el.value?'#fff':'';}
-function autoWhiteSelect(el){el.style.background=el.value?'#fff':'';}
+/* ── INPUT WHITE-FILL & clear validation error ── */
+function autoWhite(el){
+  el.style.background=el.value?'#fff':'';
+  if(el.value){ el.style.borderColor=''; el.style.boxShadow=''; }
+}
+function autoWhiteSelect(el){
+  el.style.background=el.value?'#fff':'';
+  if(el.value){ el.style.borderColor=''; el.style.boxShadow=''; }
+}
 
 /* ── TERM HINTS ── */
 function updateTermHints(){
@@ -352,13 +358,13 @@ function updateTermHints(){
   autoWhiteSelect(document.getElementById('t_term'));
   if(t==='EXW'){
     gl.placeholder='Please fill GL-code';
-    promptText.textContent='已選擇 EXW — 請輸入 GL-Code ⬆';
+    promptText.textContent='已選擇 EXW — 請填寫上方 GL-Code 欄位 ⬆';
     prompt.style.display='block';
     gl.classList.add('glcode-highlight');
     setTimeout(()=>{gl.classList.remove('glcode-highlight');gl.focus();},150);
   } else if(t==='DDP'){
     gl.placeholder='Please fill payment account no.';
-    promptText.textContent='已選擇 DDP — 請輸入 Payment Account No. ⬆';
+    promptText.textContent='已選擇 DDP — 請填寫上方 Payment Account No. 欄位 ⬆';
     prompt.style.display='block';
     gl.classList.add('glcode-highlight');
     setTimeout(()=>{gl.classList.remove('glcode-highlight');gl.focus();},150);
@@ -383,9 +389,9 @@ function buildItemCardHTML(n, data){
     <div class="item-card-body">
       <div class="item-field-group">
         <div class="item-grid-4">
-          <div><label class="field-label">箱號 (CTN)</label><input type="text" placeholder="1" class="ctn_no" oninput="autoWhite(this)"></div>
+          <div><label class="field-label">箱號 (CTN)</label><input type="text" placeholder="1" class="ctn_no" oninput="autoWhite(this);syncCtnLock()"></div>
           <input type="hidden" class="item_no" value="${n}">
-          <div><label class="field-label">Part #</label><input type="text" placeholder="039-03-001" class="part_no" oninput="autoWhite(this)"></div>
+          <div><label class="field-label">Part #</label><input type="text" placeholder="803-01-487" class="part_no" oninput="autoWhite(this)"></div>
           <div><label class="field-label">Category</label>
             <select class="description" onchange="autoFillHTS(this)">
               <option value="">— Select —</option>
@@ -409,7 +415,7 @@ function buildItemCardHTML(n, data){
       </div>
       <div class="item-field-group">
         <label class="field-label">物品描述 (Item Description)</label>
-        <input type="text" placeholder="Bicycle Parts-Accessor" class="item_desc" oninput="autoWhite(this)">
+        <input type="text" placeholder="Seal Kit: 38 FLOAT NA2 Rebuild" class="item_desc" oninput="autoWhite(this)">
       </div>
       <div class="item-divider"></div>
       <div class="item-field-group">
@@ -418,7 +424,7 @@ function buildItemCardHTML(n, data){
           <div><label class="field-label">單價 (USD)</label><input type="text" placeholder="3.00" class="unit_price" oninput="autoWhite(this);calcTotal(this.closest('.item-card'))"></div>
           <div><label class="field-label">毛重 (G.W. kg)</label>
             <input type="text" placeholder="2.48" class="gw" oninput="autoWhite(this)">
-            <span class="field-hint">* 箱號相同僅填第一箱</span>
+            <span class="field-hint dim-hint">* 箱號相同自動帶入第一箱</span>
           </div>
           <div><label class="field-label">Total Value <span style="color:var(--orange-mid);font-size:10px;">— 自動計算</span></label>
             <input type="text" placeholder="US$ 0.00" class="total_value" readonly style="background:#FFF8F2;color:var(--orange);font-weight:600;"></div>
@@ -426,9 +432,9 @@ function buildItemCardHTML(n, data){
       </div>
       <div class="item-field-group">
         <div class="item-grid-3">
-          <div><label class="field-label">長 (L cm)</label><input type="text" placeholder="23" class="dim_l" oninput="autoWhite(this)"><span class="field-hint">* 箱號相同僅填第一箱</span></div>
-          <div><label class="field-label">寬 (W cm)</label><input type="text" placeholder="14.5" class="dim_w" oninput="autoWhite(this)"><span class="field-hint">* 箱號相同僅填第一箱</span></div>
-          <div><label class="field-label">高 (H cm)</label><input type="text" placeholder="18" class="dim_h" oninput="autoWhite(this)"><span class="field-hint">* 箱號相同僅填第一箱</span></div>
+          <div><label class="field-label">長 (L cm)</label><input type="text" placeholder="23" class="dim_l" oninput="autoWhite(this)"><span class="field-hint dim-hint">* 箱號相同自動帶入第一箱</span></div>
+          <div><label class="field-label">寬 (W cm)</label><input type="text" placeholder="14.5" class="dim_w" oninput="autoWhite(this)"><span class="field-hint dim-hint">* 箱號相同自動帶入第一箱</span></div>
+          <div><label class="field-label">高 (H cm)</label><input type="text" placeholder="18" class="dim_h" oninput="autoWhite(this)"><span class="field-hint dim-hint">* 箱號相同自動帶入第一箱</span></div>
         </div>
       </div>
     </div>`;
@@ -442,6 +448,7 @@ function addItemRow(copyData){
   card.id='item-card-'+itemCount;
   card.innerHTML=buildItemCardHTML(itemCount, copyData||{});
   container.appendChild(card);
+  syncCtnLock();
   if(copyData){
     const fields=['ctn_no','part_no','description','coo_material','material','hts_code','item_desc','qty','unit_price','gw','dim_l','dim_w','dim_h'];
     fields.forEach(f=>{
@@ -470,7 +477,7 @@ function calcTotal(card){
 
 function removeItem(btn){
   const card=btn.closest('.item-card');
-  if(document.querySelectorAll('.item-card').length>1)card.remove();
+  if(document.querySelectorAll('.item-card').length>1){card.remove();syncCtnLock();}
   else alert('至少需要保留一個品項。');
 }
 
@@ -571,8 +578,112 @@ function checkBatteryOil(){
   document.getElementById('oil-warn').style.display=document.getElementById('has_oil').checked?'block':'none';
 }
 
+/* ── #1: FORM VALIDATION ── */
+const REQUIRED_FIELDS=[
+  {id:'s_package_ready', label:'Package ready (Sender #1)'},
+  {id:'s_requester',     label:'Requester (Sender #2)'},
+  {id:'s_phone',         label:'Phone (Sender #3)'},
+  {id:'s_email',         label:'Email (Sender #4)'},
+  {id:'r_ship_to',       label:'Ship to (Receiver #5)'},
+  {id:'r_address',       label:'Address (Receiver #6)'},
+  {id:'r_destination',   label:'Destination (Receiver #7)'},
+  {id:'r_postal',        label:'Postal Code (Receiver #8)'},
+  {id:'r_contact',       label:'Contact person (Receiver #9)'},
+  {id:'r_phone',         label:'Phone (Receiver #10)'},
+  {id:'r_email',         label:'Email (Receiver #11)'},
+  {id:'t_term',          label:'Term (Trade Term #12)'},
+  {id:'t_glcode',        label:'GL-Code / Payment (Trade Term #13)'},
+  {id:'t_shipping',      label:'Shipping via (Trade Term #14)'},
+];
+
+function validateForm(){
+  const missing=[];
+  // Clear previous errors
+  REQUIRED_FIELDS.forEach(f=>{
+    const el=document.getElementById(f.id);
+    if(el) el.style.borderColor='';
+  });
+
+  REQUIRED_FIELDS.forEach(f=>{
+    const el=document.getElementById(f.id);
+    if(!el) return;
+    const val=el.value.trim();
+    if(!val){
+      missing.push(f.label);
+      el.style.borderColor='#E85858';
+      el.style.boxShadow='0 0 0 3px rgba(232,88,88,0.15)';
+    }
+  });
+
+  if(missing.length){
+    const list=document.getElementById('val-list');
+    list.innerHTML=missing.map(m=>`<li>${m}</li>`).join('');
+    const toast=document.getElementById('val-toast');
+    toast.classList.add('show');
+    // Auto-scroll to first error
+    const firstErr=document.querySelector('[style*="E85858"]');
+    if(firstErr) firstErr.scrollIntoView({behavior:'smooth',block:'center'});
+    return false;
+  }
+  document.getElementById('val-toast').classList.remove('show');
+  return true;
+}
+
+/* ── #2: CTN LOCK — same CTN → lock G.W. & dims, auto-fill from first ── */
+function syncCtnLock(){
+  const cards=Array.from(document.querySelectorAll('.item-card'));
+  // Build map: ctn → first card with that ctn that has data
+  const firstCtn={};
+
+  // First pass: collect first occurrence values per CTN
+  cards.forEach(card=>{
+    const ctn=(card.querySelector('.ctn_no').value||'').trim();
+    if(!ctn) return;
+    if(!firstCtn[ctn]){
+      firstCtn[ctn]={
+        gw:  card.querySelector('.gw').value,
+        dim_l: card.querySelector('.dim_l').value,
+        dim_w: card.querySelector('.dim_w').value,
+        dim_h: card.querySelector('.dim_h').value,
+        card: card
+      };
+    }
+  });
+
+  // Second pass: lock/unlock each card's dim fields
+  cards.forEach(card=>{
+    const ctn=(card.querySelector('.ctn_no').value||'').trim();
+    const gwEl=card.querySelector('.gw');
+    const dlEl=card.querySelector('.dim_l');
+    const dwEl=card.querySelector('.dim_w');
+    const dhEl=card.querySelector('.dim_h');
+    const dimFields=[gwEl,dlEl,dwEl,dhEl];
+
+    if(ctn && firstCtn[ctn] && firstCtn[ctn].card !== card){
+      // This is a duplicate CTN — lock and auto-fill
+      const src=firstCtn[ctn];
+      gwEl.value=src.gw;
+      dlEl.value=src.dim_l;
+      dwEl.value=src.dim_w;
+      dhEl.value=src.dim_h;
+      dimFields.forEach(el=>{
+        el.readOnly=true;
+        el.classList.add('locked-dim');
+        el.style.background='';
+      });
+    } else {
+      // First occurrence or no CTN — unlock
+      dimFields.forEach(el=>{
+        el.readOnly=false;
+        el.classList.remove('locked-dim');
+      });
+    }
+  });
+}
+
 /* ── GENERATE PDF ── */
 function generatePreview(){
+  if(!validateForm()) return;   // #1: block if validation fails
   const items=getItemRows();
   const hasBattery=document.getElementById('has_battery').checked;
   const hasOil=document.getElementById('has_oil').checked;
@@ -617,7 +728,7 @@ function generatePreview(){
     <div class="pdf-header-grid">
       <!-- LEFT: Shipper -->
       <div class="pdf-col">
-        <img src="${FOX_LOGO}" style="width:110px;height:auto;display:block;margin-bottom:7px;">
+        <img src="${FOX_LOGO}" style="width:120px;height:90px;display:block;margin-bottom:7px;">
         <div class="pdf-mr"><span class="pdf-ml">Shipper:</span><span class="pdf-mv">Fox Factory Switzerland GmbH, Taiwan Branch</span></div>
         <div class="pdf-mr"><span class="pdf-ml">Address:</span><span class="pdf-mv">No. 22, Jingke S. Rd., Nantun Dist., Taichung City</span></div>
         <div class="pdf-mr"><span class="pdf-ml">Country:</span><span class="pdf-mv">Taiwan</span></div>
@@ -764,9 +875,9 @@ function showPDFConfirm(){
     <div style="background:white;border-radius:14px;padding:28px 28px 22px;max-width:420px;width:90%;box-shadow:0 16px 48px rgba(0,0,0,0.22);font-family:DM Sans,sans-serif;">
       <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#222;">📧 PDF 下載完成</div>
       <div style="font-size:13px;color:#555;line-height:1.7;margin-bottom:18px;">
-        ✅ PDF 已下載<br>
+        ✅ PDF 已下載完成<br>
         即將開啟 Outlook 新信件。<br>
-        ⚠ 請手動將 PDF 附件夾入信件後再送出。
+        <span style="color:#E85858;font-weight:700;">⚠ 請手動將 PDF 附件夾入信件後再送出。</span>
       </div>
       <div style="display:flex;gap:10px;justify-content:flex-end;">
         <button onclick="document.getElementById('pdf-confirm-modal').remove()" style="padding:9px 20px;border:2px solid #E87722;background:white;color:#E87722;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Cancel</button>
