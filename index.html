@@ -216,7 +216,7 @@
         <div class="form-row"><div class="row-num">1</div><div class="row-label">Package ready</div>
           <input type="datetime-local" id="s_package_ready" oninput="autoWhite(this)"></div>
         <div class="form-row"><div class="row-num">2</div><div class="row-label">Requester</div>
-          <input type="text" id="s_requester" placeholder="Requester: TOM" oninput="autoWhite(this)"></div>
+          <input type="text" id="s_requester" placeholder="Tiffany Ao" oninput="autoWhite(this)"></div>
         <div class="form-row"><div class="row-num">3</div><div class="row-label">Phone</div>
           <input type="text" id="s_phone" placeholder="+886-4-XXXX-XXXX" oninput="autoWhite(this)"></div>
         <div class="form-row"><div class="row-num">4</div><div class="row-label">Email</div>
@@ -233,7 +233,7 @@
         <div class="form-row"><div class="row-num">6</div><div class="row-label">Address</div>
           <input type="text" id="r_address" placeholder="Street, City, State / ZIP" oninput="autoWhite(this)"></div>
         <div class="form-row"><div class="row-num">7</div><div class="row-label">Destination</div>
-          <input type="text" id="r_destination" placeholder="Country, ex: US, CA" oninput="autoWhite(this)"></div>
+          <input type="text" id="r_destination" placeholder="Country, ex: USA, CA" oninput="autoWhite(this)"></div>
         <div class="form-row"><div class="row-num">8</div><div class="row-label">Postal Code</div>
           <input type="text" id="r_postal" placeholder="e.g. 95054" oninput="autoWhite(this)"></div>
         <!-- #3: Contact person BEFORE Phone -->
@@ -302,11 +302,11 @@
       </div>
       <!-- Battery warning -->
       <div id="battery-warn" style="display:none;margin:0 20px 12px;padding:10px 14px;background:#FFF0F0;border-left:4px solid #E85858;border-radius:0 8px 8px 0;font-size:12px;color:#C0392B;font-weight:600;">
-        ⚠ 發信請附上兩份文件：<strong>MSDS</strong> &amp; <strong>UN38.3 Test Report</strong>
+        ⚠ E-mail 請附上兩份文件：<strong>MSDS</strong> &amp; <strong>UN38.3 Test Report</strong>
       </div>
       <!-- Oil warning -->
       <div id="oil-warn" style="display:none;margin:0 20px 12px;padding:10px 14px;background:#FFF5E0;border-left:4px solid #E87722;border-radius:0 8px 8px 0;font-size:12px;color:#A04000;font-weight:600;">
-        ⚠ 發信請附上：<strong>MSDS</strong>
+        ⚠ E-mail 請附上：<strong>MSDS</strong>
       </div>
     </div>
 
@@ -352,13 +352,13 @@ function updateTermHints(){
   autoWhiteSelect(document.getElementById('t_term'));
   if(t==='EXW'){
     gl.placeholder='Please fill GL-code';
-    promptText.textContent='已選擇 EXW — 請填寫上方 GL-Code 欄位 ⬆';
+    promptText.textContent='已選擇 EXW — 請輸入 GL-Code ⬆';
     prompt.style.display='block';
     gl.classList.add('glcode-highlight');
     setTimeout(()=>{gl.classList.remove('glcode-highlight');gl.focus();},150);
   } else if(t==='DDP'){
     gl.placeholder='Please fill payment account no.';
-    promptText.textContent='已選擇 DDP — 請填寫上方 Payment Account No. 欄位 ⬆';
+    promptText.textContent='已選擇 DDP — 請輸入 Payment Account No. ⬆';
     prompt.style.display='block';
     gl.classList.add('glcode-highlight');
     setTimeout(()=>{gl.classList.remove('glcode-highlight');gl.focus();},150);
